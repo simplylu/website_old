@@ -48,11 +48,13 @@
       <p>If you enable strict mode, your search will be encapsulated in quotation marks, meaning that only results that contain exactly your query will be returned by the search engine of your choice.</p>
       <p>If you turn off strict mode, there will be no quotation marks around your input, so the search engine will not perform a full-text search.</p>
       <p>Select the language of your choice to search only for fact-checking services in your language.</p>
+      <a onclick="document.getElementById('help').close();">Close</a>
     </dialog>
     <dialog id="about">
       <h3>About</h3>
       <p>This search wizard aggregates multiple fact-checking providers for each implemented language. Currently only English and German are available.</p>
       <p>Creating a query means creating a search filter for one of the supported search engines (Google and DuckDuckGo). Clicking on one of the links will open it in a new window. Search engine filters allow you to search only those sites.</p>
+      <a onclick="document.getElementById('about').close();">Close</a>
       <!-- <h3>Connected Services</h3> -->
       <!-- <div id="connected_services"></div> -->
     </dialog>
