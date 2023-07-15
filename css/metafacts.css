@@ -1,0 +1,89 @@
+body {
+  color: #00c9ff;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 33%;
+  max-width: 250px;
+}
+
+#search {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background-color: transparent;
+  border: 1px solid #00c9ff;
+  border-radius: 5px;
+  color: #00c9ff;
+}
+
+#craft {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  color: #00c9ff;
+  text-decoration: underline;
+  cursor: pointer;
+  border: none;
+}
+
+#settings {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+a {
+  color: #00c9ff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+span {
+  color: #00c9ff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#queryview {
+  display: none;
+  text-align: center;
+}
+
+#queryfield {
+  color: red !important;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  width: 50%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 50px;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+dialog {
+  width: 67%;
+}
+
+h4 {
+  font-style: italic;
+}

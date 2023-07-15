@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/metafacts.js"></script>
+  <link rel="stylesheet" href="css/metafacts.css">
+  <title>MetaFacts</title>
+</head>
+
+<body onload="init()">
+  <header>
+    <div id="header">
+      <a onclick="aboutDialogue()">> About</a>
+      <a onclick="helpDialogue()">> Help</a>
+      <span>&nbsp;|&nbsp;</span>
+      <a onclick="setDarkMode()">> dark</a>
+      <a onclick="setLightMode()">> light</a>
+    </div>
+  </header>
+  <main>
+    <img id="logo" src="">
+    <br>
+    <div id="settings">
+      <label>Strict: <input id="strict" type="checkbox"></label></td></label>
+      <label>Language: <select id="language">
+          <option value="german">german</option>
+          <option value="english">english</option>
+        </select></label>
+    </div>
+    <input id="search" type="text" onclick="hideQuery();">
+    <input id="craft" type="button" value="Craft MetaQuery" onclick="craftQuery()">
+    <br>
+    <div id="queryview">
+      <textarea cols="4" rows="4" id="queryfield" disabled></textarea>
+      <br>
+      <br>
+      <span>Open in:</span>
+      <a href="" id="open_in_google" target="_blank">Google</a>
+      &nbsp;&middot;&nbsp;
+      <a href="" id="open_in_duckduckgo" target="_blank">DuckDuckGo</a>
+      <br>
+    </div>
+    <dialog id="help">
+      <h3>Help</h3>
+      <p>If you enable strict mode, your search will be encapsulated in quotation marks, meaning that only results that contain exactly your query will be returned by the search engine of your choice.</p>
+      <p>If you turn off strict mode, there will be no quotation marks around your input, so the search engine will not perform a full-text search.</p>
+      <p>Select the language of your choice to search only for fact-checking services in your language.</p>
+    </dialog>
+    <dialog id="about">
+      <h3>About</h3>
+      <p>This search wizard aggregates multiple fact-checking providers for each implemented language. Currently only English and German are available.</p>
+      <p>Creating a query means creating a search filter for one of the supported search engines (Google and DuckDuckGo). Clicking on one of the links will open it in a new window. Search engine filters allow you to search only those sites.</p>
+      <!-- <h3>Connected Services</h3> -->
+      <!-- <div id="connected_services"></div> -->
+    </dialog>
+  </main>
+  <footer>
+    <span>(c) 2023 by <a href="https://twitter.com/s1mplylu">@s1mplylu</a></span>
+    <br>
+    <span>Share on </span>
+    <a href="https://twitter.com/intent/tweet?text=Use%20the%20%22MetaFacts%22%20search%20aggregator%20by%20%40s1mplylu%20to%20check%20a%20fact%20on%20a%20number%20of%20sites%20at%20the%20same%20time.%0Ahttps%3A//simplylu.me/metafacts"
+      target="_blank">Twitter</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//simplylu.me/metafacts" target="_blank">Facebook</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//simplylu.me/metafacts" target="_blank">LinkedIn</a>
+    &nbsp;&middot;&nbsp;
+    <a href="mailto:?subject=Have%20a%20look%20at%20this%20fact%20checking%20tool&body=Use%20the%20%22MetaFacts%22%20search%20aggregator%20by%20%40s1mplylu%20to%20check%20a%20fact%20on%20a%20number%20of%20sites%20at%20the%20same%20time.%0Ahttps%3A//simplylu.me/metafacts%20">Mail</a>
+  </footer>
+</body>
+
+</html>
