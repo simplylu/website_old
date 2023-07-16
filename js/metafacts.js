@@ -30,6 +30,21 @@ function init() {
   } else {
     setDarkMode();
   }
+
+  let strict = localStorage.getItem("strict");
+  if (strict) {
+    document.getElementById("strict").checked = strict;
+  } else { 
+    window.localStorage.setItem("strict", false);
+  }
+
+  let language = localStorage.getItem("language");
+  if (language) {
+    document.getElementById(language).checked = true;
+  } else {
+    window.localStorage.setItem("language", "german");
+    document.getElementById("german").checked = true;
+  }
 }
 
 function setDarkMode() {
@@ -57,21 +72,35 @@ function aboutDialogue() {
   document.getElementById("about").showModal();
 }
 
+function creditsDialogue() {
+  document.getElementById("credits").showModal();
+}
+
 function craftQuery() {
   let search = document.getElementById("search").value;
   let strict = document.getElementById("strict").checked;
-  let language = document.getElementById("language").selectedOptions[0].value;
+  document.getElementsByName("language").forEach((el) => {
+    if (el.checked) {
+      language = el.value;
+    }
+  });
+  window.localStorage.setItem("language", language);
+  window.localStorage.setItem("strict", strict);
   let query = strict ? '(site:"' + Object.keys(engines[language]).join('" OR site:"') + '") AND "' + search + '"' : '(site:"' + Object.keys(engines[language]).join('" OR site:"') + '") AND ' + search;
   document.getElementById("queryfield").innerText = query;
   document.getElementById("queryview").style.display = "block";
   
   // Set google link
-  url = "https://www.google.com/search?q=" + encodeURI(query)
+  url = "https://www.google.com/search?q=" + encodeURI(query);
   document.getElementById("open_in_google").href = url;
 
   // set DDG link
-  url = "https://duckduckgo.com/?q=" + encodeURI(query)
+  url = "https://duckduckgo.com/?q=" + encodeURI(query);
   document.getElementById("open_in_duckduckgo").href = url;
+
+  // set metaGer link
+  url = "https://metager.de/meta/meta.ger3?eingabe=" + encodeURI(query);
+  document.getElementById("open_in_metager").href = url;
 }
 
 function hideQuery() {

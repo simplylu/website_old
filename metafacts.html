@@ -7,14 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/metafacts.js"></script>
   <link rel="stylesheet" href="css/metafacts.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>MetaFacts</title>
 </head>
 
 <body onload="init()">
-  <header>
+  <header class="bg-neutral-900 text-center">
     <div id="header">
       <a onclick="aboutDialogue()">> About</a>
       <a onclick="helpDialogue()">> Help</a>
+      <a onclick="creditsDialogue()">> Credits</a>
       <span>&nbsp;|&nbsp;</span>
       <a onclick="setDarkMode()">> dark</a>
       <a onclick="setLightMode()">> light</a>
@@ -24,11 +27,13 @@
     <img id="logo" src="">
     <br>
     <div id="settings">
-      <label>Strict: <input id="strict" type="checkbox"></label></td></label>
-      <label>Language: <select id="language">
-          <option value="german">german</option>
-          <option value="english">english</option>
-        </select></label>
+      <label>Strict: <input id="strict" type="checkbox"></label></td></label><br>
+      <label>Language: 
+        <input type="radio" id="german" name="language" value="german">
+        <label for="german">🇩🇪</label>
+        <input type="radio" id="english" name="language" value="english">
+        <label for="english">🇬🇧</label>
+      </label>
     </div>
     <input id="search" type="text" onclick="hideQuery();">
     <input id="craft" type="button" value="Craft MetaQuery" onclick="craftQuery()">
@@ -37,32 +42,38 @@
       <textarea cols="4" rows="4" id="queryfield" disabled></textarea>
       <br>
       <br>
-      <span>Open in:</span>
+      <span>Open MetaQuery</span><br>
       <a href="" id="open_in_google" target="_blank">Google</a>
       &nbsp;&middot;&nbsp;
       <a href="" id="open_in_duckduckgo" target="_blank">DuckDuckGo</a>
+      &nbsp;&middot;&nbsp;
+      <a href="" id="open_in_metager" target="_blank">metaGer</a>
       <br>
     </div>
-    <dialog id="help">
-      <h3>Help</h3>
-      <p>If you enable strict mode, your search will be encapsulated in quotation marks, meaning that only results that contain exactly your query will be returned by the search engine of your choice.</p>
-      <p>If you turn off strict mode, there will be no quotation marks around your input, so the search engine will not perform a full-text search.</p>
-      <p>Select the language of your choice to search only for fact-checking services in your language.</p>
-      <a onclick="document.getElementById('help').close();">Close</a>
+    <dialog class="bg-neutral-400" id="help">
+      <b>Help</b>
+      <p>> If you enable strict mode, your search will be encapsulated in quotation marks, meaning that only results that contain exactly your query will be returned by the search engine of your choice.</p>
+      <p>> If you turn off strict mode, there will be no quotation marks around your input, so the search engine will not perform a full-text search.</p>
+      <p>> Select the language of your choice to search only for fact-checking services in your language.</p>
+      <a onclick="document.getElementById('help').close();"><i>Close</i></a>
     </dialog>
-    <dialog id="about">
-      <h3>About</h3>
-      <p>This search wizard aggregates multiple fact-checking providers for each implemented language. Currently only English and German are available.</p>
-      <p>Creating a query means creating a search filter for one of the supported search engines (Google and DuckDuckGo). Clicking on one of the links will open it in a new window. Search engine filters allow you to search only those sites.</p>
-      <a onclick="document.getElementById('about').close();">Close</a>
-      <!-- <h3>Connected Services</h3> -->
-      <!-- <div id="connected_services"></div> -->
+    <dialog class="bg-neutral-400" id="about">
+      <b>About</b>
+      <p>> This search wizard aggregates multiple fact-checking providers for each implemented language. Currently only English and German are available.</p>
+      <p>> Creating a query means creating a search filter for one of the supported search engines (Google and DuckDuckGo). Clicking on one of the links will open it in a new window. Search engine filters allow you to search only those sites.</p>
+      <a onclick="document.getElementById('about').close();"><i>Close</i></a>
+    </dialog>
+    <dialog class="bg-neutral-400" id="credits">
+      <b>Credits</b>
+      <p>> <b>Author</b>: Luna/Lu 🦊, on <a href="https://twitter.com/s1mplylu">Twitter</a> or <a href="https://github.com/simplylu">GitHub</a></p>
+      <p>> <b>Github</b>: Code is stored <a href="https://github.com/simplylu/website" target="_blank"><u>here</u></a>.</p>
+      <p>> <b>Pages </b>: Taken from Etrit Asllani's book "What the Fake".</p>
+      <a onclick="document.getElementById('credits').close();"><i>Close</i></a>
     </dialog>
   </main>
-  <footer>
-    <span>(c) 2023 by <a href="https://twitter.com/s1mplylu">@s1mplylu</a></span>
+  <footer class="bg-neutral-900 text-center">
+    <b>Share</b>
     <br>
-    <span>Share on </span>
     <a href="https://twitter.com/intent/tweet?text=Use%20the%20%22MetaFacts%22%20search%20aggregator%20by%20%40s1mplylu%20to%20check%20a%20fact%20on%20a%20number%20of%20sites%20at%20the%20same%20time.%0Ahttps%3A//simplylu.me/metafacts"
       target="_blank">Twitter</a>
     &nbsp;&middot;&nbsp;
