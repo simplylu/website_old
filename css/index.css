@@ -1,0 +1,49 @@
+body {
+  color: #00c9ff;
+}
+
+a {
+  color: #00c9ff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+span {
+  color: #00c9ff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: monospace !important;
+  font-size: 16px;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+}
+
+main {
+  margin-top: 25px;
+}
+
+#card:hover {
+  cursor: pointer;
+  background-color: #00c8ff2f;
+}
+
+#card {
+  padding: 10px;
+  border: 1px solid #00c8ff94;
+  border-radius: 10px;
+  max-width: 75% !important;
+  min-width: 75% !important;
+}
+
