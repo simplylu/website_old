@@ -1,2 +1,48 @@
-<h1>It works!</h1>
-<p>Have a look at <a href="/metafacts.html">MetaFacts</a></p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/index.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="media/favicon.ico">
+  <title>simplylu.me</title>
+</head>
+
+<body onload="init()">
+  <header class="bg-neutral-900 text-center">
+    <div id="header">
+      <a href="/">simplylu.me</a>
+      <br>
+      <a onclick="setDarkMode()">dark</a> or
+      <a onclick="setLightMode()">light</a>
+    </div>
+  </header>
+  <main>
+    <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+      <div class="mx-auto" id="card" onclick="window.location.href = '/metafacts.html';">
+        <img class="h-auto" id="metafacts" width="200px" src=""
+          alt="">
+        <br>
+        <p><b>MetaFacts makes fact checking easier...</b></p>
+        <p>Insert any search query and MetaFacts provides you with a MetaQuery to include as many fact checking portals as possible.</p>
+      </div>
+      <div class="mx-auto" id="card" onclick="window.location.href = '/betterlinkie.html';">
+        <img class="h-auto" id="betterlinkie" width="200px" src=""
+          alt="">
+        <br>
+        <p><b>Betterlinkie makes privacy easier...</b></p>
+        <p>Insert any website link and Betterlinkie tries to provide you with an alternative privacy-friendly and open source frontend.</p>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-neutral-900 text-center">
+    (c) 2023 - s[i1]mplylu
+  </footer>
+</body>
+
+</html>

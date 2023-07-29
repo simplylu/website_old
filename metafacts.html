@@ -9,12 +9,15 @@
   <link rel="stylesheet" href="css/metafacts.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="media/favicon.ico">
   <title>MetaFacts</title>
 </head>
 
 <body onload="init()">
   <header class="bg-neutral-900 text-center">
     <div id="header">
+      <a href="/">&lt;&lt; back</a>
+      <span>&nbsp;|&nbsp;</span>
       <a onclick="aboutDialogue()">> About</a>
       <a onclick="helpDialogue()">> Help</a>
       <a onclick="creditsDialogue()">> Credits</a>
@@ -28,7 +31,9 @@
     <br>
     <div id="settings">
       <label>Strict: <input id="strict" type="checkbox"></label></td></label><br>
-      <label>Language: 
+      <label>Language:
+        <input type="radio" id="education" name="language" value="education">
+        <label for="education">📚</label>
         <input type="radio" id="german" name="language" value="german">
         <label for="german">🇩🇪</label>
         <input type="radio" id="english" name="language" value="english">

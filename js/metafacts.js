@@ -14,6 +14,12 @@ const engines = {
     "factcheck.org": "descr",
     "politifact.com": "descr",
     "truthorfiction.com": "descr",
+  },
+  "education": {
+    "scholar.google.com": "descr",
+    "semanticscholar.org": "",
+    "science.gov": "",
+    "researchgate.net": ""
   }
 }
 
@@ -50,7 +56,7 @@ function init() {
 function setDarkMode() {
   let logo = document.getElementById("logo");
   let {body} = document;
-  logo.src = "media/logo_dark.png";
+  logo.src = "media/metafacts_dark.png";
   body.style.backgroundColor = "#1e1e1e";
   window.localStorage.setItem("theme", "dark");
 }
@@ -58,7 +64,7 @@ function setDarkMode() {
 function setLightMode() {
   let logo = document.getElementById("logo");
   let {body} = document;
-  logo.src = "media/logo_light.png";
+  logo.src = "media/metafacts_light.png";
   body.style.backgroundColor = "#e1e1e1";
   window.localStorage.setItem("theme", "light");
 }
