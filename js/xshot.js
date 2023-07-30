@@ -20,7 +20,7 @@ function load() {
   document.getElementById("reporting").style.display = "block";
   document.getElementById("load").style.display = "none";
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const atomic_url = `http://worldtimeapi.org/api/timezone/${tz}.json`
+  const atomic_url = `https://worldtimeapi.org/api/timezone/${tz}.json`
 
   let xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
