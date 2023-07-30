@@ -69,19 +69,15 @@ function setLightMode() {
   window.localStorage.setItem("theme", "light");
 }
 
-function helpDialogue() {
-  document.getElementById("help").showModal();
+function openDialogue(name) {
+  document.getElementById(name).showModal();
+  document.body.style.filter = "blur(10px)";
 }
 
-function aboutDialogue() {
-  // loadConnectedServices();
-  document.getElementById("about").showModal();
+function closeDialogue(name) {
+  document.getElementById(name).close();
+  document.body.style.filter = "";
 }
-
-function creditsDialogue() {
-  document.getElementById("credits").showModal();
-}
-
 function craftQuery() {
   let search = document.getElementById("search").value;
   let strict = document.getElementById("strict").checked;

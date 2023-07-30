@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/xshot.js"></script>
+  <link rel="stylesheet" href="css/xshot.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="media/favicon.ico">
+  <title>XShot</title>
+</head>
+
+<body onload="init()">
+  <header class="bg-neutral-900 text-center">
+    <div id="header">
+      <a href="/">&lt;&lt; back</a>
+      <span>&nbsp;|&nbsp;</span>
+      <a onclick="openDialogue('about')">> About</a>
+      <a onclick="openDialogue('share')">> Share</a>
+      <a onclick="openDialogue('help')">> Help</a>
+      <span>&nbsp;|&nbsp;</span>
+      <a onclick=""><del>> dark</del></a>
+      <a onclick=""><del>> light</del></a>
+    </div>
+  </header>
+  <main>
+    <img id="logo" src="">
+    <br>
+    <input type="url" id="url" placeholder="Twitter URL" onfocus="ui_toggle()">
+    <button id="load" onclick="load()">Load</button>
+    <div id="result">
+      <div id="tweet"></div>
+      <div id="time">
+        <table>
+          <tr>
+            <td style="border-bottom: 1px solid cyan;" colspan="2"><b>Date/Time of Screenshot</b></td>
+          </tr>
+          <tr>
+            <td><b>Timezone</b></td>
+            <td id="timezone"></td>
+          </tr>
+          <tr>
+            <td><b>UTC</b></td>
+            <td id="utc_time"></td>
+          </tr>
+          <tr>
+            <td><b>Local</b></td>
+            <td id="local_time"></td>
+          </tr>
+          <tr>
+            <td><b>Unixtime</b></td>
+            <td id="unixtime"></td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid cyan;" colspan="2"><b>Info</b></td>
+          </tr>
+          <tr>
+            <td><b>URL</b></td>
+            <td id="tweet_url"></td>
+          </tr>
+          <tr>
+            <td><b>ID</b></td>
+            <td id="tweet_id"></td>
+          </tr>
+          <tr>
+            <td><b>Account</b></td>
+            <td id="account_url"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="reporting">
+      <span>⬆️ Take a screenshot of the above container and use the screenshot as evidence for a report to one of the
+        reporting bodies listed below.</span>
+      <br><br>
+      <h4><b>Governmental and non-governmental reporting offices</b></h4>
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Germany')">Germany</button>
+        <button class="tablinks" onclick="openTab(event, 'UK')">UK</button>
+      </div>
+      <div id="Germany" class="tabcontent">
+        <table>
+          <thead>
+            <tr>
+              <td><b>Name</b></td>
+              <td><b>Government?</b></td>
+              <td><b>Direct link</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ZHIN</td>
+              <td>yes</td>
+              <td><a target="_blank" href="https://zhin.de/nextcloud/index.php/apps/zhin/submit">🔗 zhin.de</a></td>
+            </tr>
+            <tr>
+              <td>HessenGegenHetze</td>
+              <td>yes</td>
+              <td><a target="_blank" href="https://hessengegenhetze.de/hate-speech-und-extremismus-melden">🔗
+                  hessengegenhetze.de</a></td>
+            </tr>
+            <tr>
+              <td>HateAid</td>
+              <td>no</td>
+              <td><a target="_blank" href="https://hateaid.org/meldeformular/">🔗 hateaid.org</a></td>
+            </tr>
+            <tr>
+              <td>REspect!</td>
+              <td>no</td>
+              <td><a target="_blank" href="https://meldestelle-respect.de/">🔗 meldestelle-respect.de</a></td>
+            </tr>
+            <tr>
+              <td>Onlinewachen</td>
+              <td>yes</td>
+              <td><a target="_blank" href="https://www.bka.de/DE/KontaktAufnehmen/Onlinewachen/onlinewachen_node.html">🔗 bka.de</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="UK" class="tabcontent">
+        <table>
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Government ?</td>
+              <td>Direct link</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Police</td>
+              <td>yes</td>
+              <td><a target="_blank" href="https://www.police.uk/ro/report/hate-crime/hc-av1/report-hate-crime/">🔗 police.uk</a></td>
+            </tr>
+            <tr>
+              <td>StopHateUK</td>
+              <td>no</td>
+              <td><a target="_blank" href="https://www.stophateuk.org/report-hate-crime/">🔗 stophateuk.org</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <dialog class="bg-neutral-400" id="help">
+      <b>Help</b>
+      <a onclick="closeDialogue('help');"><i>Close</i></a>
+    </dialog>
+    <dialog class="bg-neutral-400" id="about">
+      <b>About</b>
+      <p>> Easy to use tool to show a tweet alongside current time; just take a screenshot of it and use it to report hate crime.</p>
+      <p>> Tweet is embeded as iframe and thus cannot be altered.</p>
+      <p>> Time is taken from <a href="worldtimeapi.org">WorldTimeAPI</a></p>
+      <a onclick="closeDialogue('about');"><i>Close</i></a>
+    </dialog>
+    <dialog class="bg-neutral-400" id="share">
+      <b>Share</b>
+      <a onclick="closeDialogue('share');"><i>Close</i></a>
+    </dialog>
+  </main>
+</body>
+
+</html>

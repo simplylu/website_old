@@ -18,9 +18,9 @@
     <div id="header">
       <a href="/">&lt;&lt; back</a>
       <span>&nbsp;|&nbsp;</span>
-      <a onclick="aboutDialogue()">> About</a>
-      <a onclick="helpDialogue()">> Help</a>
-      <a onclick="creditsDialogue()">> Credits</a>
+      <a onclick="openDialogue('about')()">> About</a>
+      <a onclick="openDialogue('help')()">> Help</a>
+      <a onclick="openDialogue('credits')()">> Credits</a>
       <span>&nbsp;|&nbsp;</span>
       <a onclick="setDarkMode()">> dark</a>
       <a onclick="setLightMode()">> light</a>
@@ -60,20 +60,20 @@
       <p>> If you enable strict mode, your search will be encapsulated in quotation marks, meaning that only results that contain exactly your query will be returned by the search engine of your choice.</p>
       <p>> If you turn off strict mode, there will be no quotation marks around your input, so the search engine will not perform a full-text search.</p>
       <p>> Select the language of your choice to search only for fact-checking services in your language.</p>
-      <a onclick="document.getElementById('help').close();"><i>Close</i></a>
+      <a onclick="closeDialogue('help');"><i>Close</i></a>
     </dialog>
     <dialog class="bg-neutral-400" id="about">
       <b>About</b>
       <p>> This search wizard aggregates multiple fact-checking providers for each implemented language. Currently only English and German are available.</p>
       <p>> Creating a query means creating a search filter for one of the supported search engines (Google and DuckDuckGo). Clicking on one of the links will open it in a new window. Search engine filters allow you to search only those sites.</p>
-      <a onclick="document.getElementById('about').close();"><i>Close</i></a>
+      <a onclick="closeDialogue('about');"><i>Close</i></a>
     </dialog>
     <dialog class="bg-neutral-400" id="credits">
       <b>Credits</b>
       <p>> <b>Author</b>: Luna/Lu 🦊, on <a href="https://twitter.com/s1mplylu">Twitter</a> or <a href="https://github.com/simplylu">GitHub</a></p>
       <p>> <b>Github</b>: Code is stored <a href="https://github.com/simplylu/website" target="_blank"><u>here</u></a>.</p>
       <p>> <b>Pages </b>: Taken from Etrit Asllani's book "What the Fake".</p>
-      <a onclick="document.getElementById('credits').close();"><i>Close</i></a>
+      <a onclick="closeDialogue('credits');"><i>Close</i></a>
     </dialog>
   </main>
   <footer class="bg-neutral-900 text-center">

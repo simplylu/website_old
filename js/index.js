@@ -32,8 +32,10 @@ function setDarkMode() {
   let {body} = document;
   let metafacts = document.getElementById("metafacts");
   let betterlinkie = document.getElementById("betterlinkie");
+  let xshot = document.getElementById("xshot");
   metafacts.src = "media/metafacts_dark.png"
   betterlinkie.src = "media/betterlinkie_dark.png"
+  xshot.src = "media/xshot_dark.png"
   body.style.backgroundColor = "#1e1e1e";
   window.localStorage.setItem("theme", "dark");
 }
@@ -42,8 +44,10 @@ function setLightMode() {
   let {body} = document;
   let metafacts = document.getElementById("metafacts");
   let betterlinkie = document.getElementById("betterlinkie");
+  let xshot = document.getElementById("xshot");
   metafacts.src = "media/metafacts_light.png"
   betterlinkie.src = "media/betterlinkie_light.png"
+  xshot.src = "media/xshot_light.png"
   body.style.backgroundColor = "#e1e1e1";
   window.localStorage.setItem("theme", "light");
 }
